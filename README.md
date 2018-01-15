@@ -9,35 +9,35 @@ YOLO(You only look once) is a popolar algorithm, as it achieves high accuracy an
 Downside of Yolo: Resource Expensive(Recommended to train only on GPU).
 
  **Input**: 
-- 1) Set of Images for Training,a Single Image may have multiple objects to detect(.png)
-- 2) Set of Annotation defined with Bounding Boxes(.xml)
+1) Set of Images for Training,a Single Image may have multiple objects to detect(.png)
+2) Set of Annotation defined with Bounding Boxes(.xml)
 
 **Output**
 List of Bounding Boxes along with recongnized Object. Each bounding box is represented by: 6 numbers $(p_c, x_min, y_min, x_max,y_max, c)$
-- $p_c$ : Confidence over the Object
-- $xmin$ : x-min point of Bounding Box.
-- $ymin$ : y-min point of Bounding Box.
-- $xmax$ : x-max point of Bounding Box.
-- $ymax$ : y-max point of Bounding Box.
+- p_c : Confidence over the Object
+- xmin : x-min point of Bounding Box.
+- ymin : y-min point of Bounding Box.
+- xmax : x-max point of Bounding Box.
+- ymax : y-max point of Bounding Box.
 - c      : Class of Detected object(A vector of number of Classes).
 
 OR y can be defined as:
 
-- $p_c$ : Confidence over the Object
-- $b_x$ : x point, center of Bounding Box.
-- $b_y$ : y point, center of Bounding Box.
-- $b_h$ : Height of Bounding Box.
-- $b_w$ : Width  Bounding Box.
+- p_c : Confidence over the Object
+- b_x : x point, center of Bounding Box.
+- b_y : y point, center of Bounding Box.
+- b_h : Height of Bounding Box.
+- b_w : Width  Bounding Box.
 - c      : Class of Detected object(A vector of number of Classes).
 
-<img src="notebook_images/box_label.png" style="width:500px;height:250;">
+<img src="notebook_images/box_label.png" style="width:300px;height:250;">
 <caption><center> <u> **Figure 1** </u>: **Definition of a box**<br> </center></caption>
 
 
 # Working
 
 It apply a single neural network to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities. It consist of Convolution Layers and Pooling Layer.
-<img src="notebook_images/anchor_map.png" style="width:200px;height:200;">
+<img src="notebook_images/anchor_map.png" style="width:100px;height:100;">
 <caption><center> 
 
 ## Non-max Suppression Algo
