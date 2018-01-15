@@ -37,7 +37,7 @@ OR y can be defined as:
 # Working
 
 It apply a single neural network to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities. It consist of Convolution Layers and Pooling Layer.
-<img src="notebook_images/anchor_map.png" style="width:100px;height:100;">
+<img src="notebook_images/anchor_map.png" style="width:30px;height:30px;">
 <caption><center> 
 
 ## Non-max Suppression Algo
