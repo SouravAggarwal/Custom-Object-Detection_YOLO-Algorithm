@@ -1,0 +1,26 @@
+<annotation>
+  <folder>Data</folder>
+  <filename>33</filename>
+  <path>D:\CurrProjects\magii classifier\Data\33.jpg</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>186</width>
+    <height>270</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>maggi</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>18</xmin>
+      <ymin>10</ymin>
+      <xmax>175</xmax>
+      <ymax>267</ymax>
+    </bndbox>
+  </object>
+</annotation>
