@@ -90,7 +90,7 @@ Example for Vertical Edge Detection:
 ## Preparing Data Set
 
 - Download images for the DataSet and save images in "/Data/Images"
-- To create Annotations file Use Application to Draw Bounding Box, over the image to selecting over the object and save according its class.("/Data/Annotations"
+- To create Annotations file Use Application to Draw Bounding Box, over the image to selecting over the object and save with its class.("/Data/Annotations")
 App : https://github.com/tzutalin/labelImg
 
 Example for Input Array: (m , Height, Weight, channels = 3)
