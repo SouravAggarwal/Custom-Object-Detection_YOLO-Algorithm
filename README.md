@@ -141,32 +141,35 @@ Define the number of classes/Objects with their Actual names.
 
 ## Command to train the model
 
+```
+python flow --model cfg/tiny-yolo-voc-1c.cfg  --load bin/tiny-yolo-voc.weights  --train  --annotation data/annotations --dataset data/images  --gpu 0.9  --epoch 300
 
-> python flow --model cfg/tiny-yolo-voc-1c.cfg  --load bin/tiny-yolo-voc.weights  --train  --annotation data/annotations --dataset data/images  --gpu 0.9  --epoch 300
+python flow  --model [.cfg directory]  --load [.weights]  --train  --annotations [.xml]  --dataset [.png]  --gpu [0.1 to 1.0]  --epoch [training iterations]
 
-> python flow  --model [.cfg directory]  --load [.weights]  --train  --annotations [.xml]  --dataset [.png]  --gpu [0.1 to 1.0]  --epoch [training iterations]
-
-
+```
 
 
 - First try without using **--gpu** flag, as tensorflow gpu version might not be properly installed on your system.
 - This will start the model training and while training after particular iteration, it will save a **".weights"** files in **/bin** directory. For predict method use the last generated file.
 
 ### Resume training with last Checkpoint (Pre-trained model)
+```
 flow --train --model cfg/yolo-new.cfg --load -1
-
+```
 ## Predicting with Camera or Video file
 
 ### For CPU
-> python flow --model cfg/tiny-yolo-voc-1c.cfg --load bin/yolo-new.weights --demo videofile.avi
+```
+python flow --model cfg/tiny-yolo-voc-1c.cfg --load bin/yolo-new.weights --demo videofile.avi
 
-> python flow --model cfg/tiny-yolo-voc-1c.cfg --load 300 --demo videofile.avi
-
+python flow --model cfg/tiny-yolo-voc-1c.cfg --load 300 --demo videofile.avi
+```
 - --load flag iteration last ckeckpoint save in /ckpt/
 
 ### For GPU
-> python flow --model cfg/tiny-yolo-voc-1c.cfg --load bin/yolo-new.weights --demo videofile.avi --gpu 0.8
-
+```
+python flow --model cfg/tiny-yolo-voc-1c.cfg --load bin/yolo-new.weights --demo videofile.avi --gpu 0.8
+```
 
 
 
@@ -174,14 +177,14 @@ flow --train --model cfg/yolo-new.cfg --load -1
 - To save as video with predicted bounding box, add **--saveVideo** option.
 
 ### For using model in python script
-
+```
 from darkflow.net.build import TFNet
 import cv2
-options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.1}
+options = {"model": "cfg//tiny-yolo-voc-1c.cfg", "load": 300, "threshold": 0.1}
 tfnet = TFNet(options)
 
-imgcv = cv2.imread("./sample_img/sample_dog.jpg")
+imgcv = cv2.imread("data/sample_car.jpg")
 result = tfnet.return_predict(imgcv)
 print(result)
-
+```
 #This will return a json representing each detected object probability with bounding box dimensions.
